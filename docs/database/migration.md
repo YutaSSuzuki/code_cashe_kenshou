@@ -2,20 +2,25 @@
 
 ## Status
 
-Draft
+Not Applicable
 
 ## Policy
 
-DB変更の適用方法、命名規則、実行順序、rollback方針を記載する。
+本検証はデータベースを使用しないため、マイグレーションは行わない。
 
 ## Current Version
 
 | Version | Applied Date | Description |
 | --- | --- | --- |
+| 該当なし | - | データベース非使用 |
 
 ## Procedure
 
+該当なし。
+
 ## Rollback
+
+該当なし。
 
 ## Related Documents
 

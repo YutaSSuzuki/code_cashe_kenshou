@@ -2,14 +2,11 @@
 
 ## Status
 
-Draft
+Not Applicable
 
 ## Diagram
 
-```mermaid
-erDiagram
-    ENTITY_A ||--o{ ENTITY_B : has
-```
+本検証はデータベースを使用しないため、ER図は存在しない。
 
 ## Related Documents
 

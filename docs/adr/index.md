@@ -6,6 +6,7 @@
 
 | ADR | Status | Decision |
 | --- | --- | --- |
+| [ADR-0001](0001-runtime-code-generation.md) | Accepted | Byte Buddyを使った検証profile限定runtime code生成 |
 
 ## Adding an ADR
 

@@ -6,6 +6,7 @@
 
 | Proposal | Status | Goal |
 | --- | --- | --- |
+| [Code Cache Verification Environment](code-cache-verification-environment.md) | Approved | EC2とCloudWatchを使った再現可能な検証環境を構築する |
 
 ## Adding a Proposal
 
