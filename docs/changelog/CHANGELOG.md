@@ -20,6 +20,7 @@
 - Byte Buddyによる検証profile限定Generator、Hot/Cold probe、入力上限、自動テストを追加。
 - Generator API仕様とローカル再現手順を追加。
 - EC2復元、CloudWatch監視、10MB満杯、64MB拡張後の遅延解消を比較する次工程計画を追加。
+- HTTP入力からController、Service、Byte Buddy、JIT、Code Cache、jcmdまでの詳細Runtime Flowを追加。
 
 ### Changed
 

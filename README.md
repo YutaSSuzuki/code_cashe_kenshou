@@ -333,6 +333,7 @@ jcmd "$PID" Compiler.codelist \
 
 - [Documentation Policy](docs/documentation-policy.md)
 - [Current State](docs/architecture/current-state.md)
+- [Runtime Flow](docs/architecture/runtime-flow.md)
 - [Local Development](docs/operations/local-development.md)
 - [Load API Implementation Guide](docs/api/load-api-implementation.md)
 - [Code Cache Test API](docs/api/code-cache-test-api.md)
