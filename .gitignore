@@ -1,0 +1,35 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Java and Gradle
+.gradle/
+build/
+out/
+target/
+
+# Node.js
+node_modules/
+dist/
+coverage/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
