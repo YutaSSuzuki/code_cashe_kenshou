@@ -2,14 +2,14 @@
 
 ## Status
 
-Draft
+Verified on Ubuntu EC2
 
 ## Environments
 
 | Environment | Purpose | Deployment Target |
 | --- | --- | --- |
 | Local | 実装、単体試験、`jcmd`による事前確認 | WSL2 Ubuntu 22.04 LTS、OpenJDK 21 |
-| Verification | Code Cache負荷試験とCloudWatch監視 | Ubuntu Server 24.04 LTS EC2（x86_64）、OpenJDK 21 |
+| Verification | Code Cache負荷試験とCloudWatch監視 | Ubuntu Server 24.04 LTS以降のEC2（x86_64）、OpenJDK 21 |
 
 ## Deployment Diagram
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-Active (Local), Draft (CloudWatch)
+Active
 
 ## Purpose
 

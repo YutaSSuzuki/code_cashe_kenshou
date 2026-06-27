@@ -21,6 +21,9 @@
 - Generator API仕様とローカル再現手順を追加。
 - EC2復元、CloudWatch監視、10MB満杯、64MB拡張後の遅延解消を比較する次工程計画を追加。
 - HTTP入力からController、Service、Byte Buddy、JIT、Code Cache、jcmdまでの詳細Runtime Flowを追加。
+- Ubuntu EC2でのCode Cache満杯、64MB拡張、32MB flushing有効の追加検証結果を記録。
+- CloudWatch AgentによるJMXメトリクスとJVMログ監視手順を記録。
+- docs各ディレクトリの役割、更新ルール、完了チェックリストを追加。
 
 ### Changed
 
@@ -32,10 +35,11 @@
 - ローカル手順へMavenコマンドの役割、再実行条件、現在の再開地点を追記。
 - ローカルで10MB Code Cache満杯、JIT停止、Cold probe約13.7倍遅延を確認し、性能文書を更新。
 - ローカル検証を完了し、RoadmapのCurrent FocusをEC2・CloudWatch検証へ変更。
+- EC2・CloudWatch検証完了後の状態に合わせてREADME、Current State、Roadmapを更新。
 
 ### Fixed
 
-- 該当なし。
+- docs indexとCurrent Stateに残っていた未作成・準備段階の記述を修正。
 
 ### Removed
 

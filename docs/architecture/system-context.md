@@ -2,11 +2,12 @@
 
 ## Status
 
-Draft
+Active
 
 ## Overview
 
-予定している検証環境の境界を記載する。実装完了後にActiveへ変更する。
+検証環境の境界を記載する。アプリケーション、EC2、CloudWatch Agent、CloudWatch、`jcmd`の
+責務を分けて確認する。
 
 ```mermaid
 flowchart LR
@@ -36,7 +37,7 @@ flowchart LR
 | --- | --- | --- |
 | Amazon EC2 | JavaサンプルアプリとCloudWatch Agentの実行 | SSH、HTTP |
 | Amazon CloudWatch | JVMメトリクス、ログ、アラームの管理 | AWS API（HTTPS） |
-| JMX | JVMメモリプールの取得 | localhost TCP 9010（予定） |
+| JMX | JVMメモリプールの取得 | localhost TCP 9010 |
 
 ## Related Documents
 

@@ -2,11 +2,12 @@
 
 ## Status
 
-Local Complete / EC2 Not Started
+Complete: Local and EC2 verification recorded
 
 ## Test Plan
 
 - [Performance Test Plan](test-plan.md)
+- [EC2 and CloudWatch Verification](ec2-cloudwatch-verification.md)
 
 ## Execution Date
 
@@ -23,6 +24,8 @@ Local Complete / EC2 Not Started
 
 ## Results
 
+### Local
+
 | Scenario | Result | Metrics | Judgment |
 | --- | --- | --- | --- |
 | Automated test | 14 tests、failures 0、errors 0 | Maven Surefire report | Pass |
@@ -36,6 +39,17 @@ Local Complete / EC2 Not Started
 | Tiered compilation | `LoadService.calculate(I)J`がLevel 4 | `jcmd Compiler.codelist` | Pass |
 | 10MB Code Cache | used 7,906KB、max 8,850KB、free 2,333KB、nmethods 1,976 | full_count 0、Compilation enabled | Not full |
 
+### EC2
+
+| Scenario | Result | Metrics | Judgment |
+| --- | --- | --- | --- |
+| 32MB、flushing無効 | 16,000 classで満杯 | `full_count=1`、Compilation disabled | Full reproduced |
+| 32MB満杯後の遅延 | Cold probeがHot probeより遅い | Hot 2.12ms、Cold 24.46ms | Delay reproduced |
+| CloudWatch監視 | Code Cache pool metricとJVM warning logを確認 | `used`、`max`、`committed` | Pass |
+| 64MB、flushing無効 | 20,000 class後も満杯にならない | Compilation enabled | Capacity mitigated |
+| 64MB時の遅延 | ColdがJIT停止時より短い | Hot 1.98ms、Cold 4.69ms | Delay improved |
+| 32MB、flushing有効 | `used`と`nmethods`が途中で減少 | peak 17,931KB、最終13,063KB | Sweeper recovery confirmed |
+
 ## Findings
 
 - 負荷APIの正常系と入力範囲外が設計どおり応答した。
@@ -45,6 +59,9 @@ Local Complete / EC2 Not Started
 - Generatorにより異なるmethodを増やすと、通常Tiered CompilationのままCode Cacheを満杯にできた。
 - 満杯後もHot probeはcompiled codeを利用でき、Cold probeはinterpreter実行により約13.7倍遅かった。
 - 満杯後の`used`がpeakより減っていても、連続領域不足によりcompilerはdisabledのままになり得る。
+- EC2では32MB、flushing無効で満杯とJIT停止を維持でき、CloudWatchでも使用量とwarning logを確認できた。
+- 64MBへ拡張すると同一負荷で満杯を回避し、Cold probeはJIT停止時より短くなった。
+- 32MBでもflushing有効ならSweeper回収により`used`と`nmethods`が減少し、JITは継続できた。
 
 ## Related Documents
 

@@ -11,9 +11,10 @@ Active
 
 この文書は完成コードを提供せず、作成対象、確認方法、完了条件を定義する。
 
-## Current Progress
+## Local Re-run Checklist
 
-2026-06-20時点の進捗:
+プロジェクトとしてのローカル検証は完了済みである。
+このチェックリストは、学習者がローカルで同じ手順を再実行して結果を記録するために残す。
 
 - [x] Spring Initializrの雛形を`app/`へ展開
 - [x] Maven Wrapperの不足ファイルを復元
@@ -26,10 +27,8 @@ Active
 - [ ] `jcmd`で負荷前後のCode Cacheを比較
 - [ ] ローカル検証結果を記録してGitへ追加
 
-Generatorによる満杯・JIT停止・Hot/Cold差の実装検証は完了している。上記未完了項目は、
-学習者が手順を再実行して自身の結果を記録するために残す。
-
-次に実施するのは[Step 5: Build and Run with JVM Options](#step-5-build-and-run-with-jvm-options)である。
+Generatorによる満杯・JIT停止・Hot/Cold差の実装検証は完了している。
+再実行する場合は[Step 5: Build and Run with JVM Options](#step-5-build-and-run-with-jvm-options)から開始する。
 
 ## Command Roles
 
